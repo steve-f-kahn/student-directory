@@ -2,8 +2,8 @@ def input_students
   puts "Please enter the names of the students and their cohort"
   puts "To finish, just hit return twice"
   students =[]
-  name = gets.chomp
-  cohort = gets.chomp.to_sym
+  name = gets.strip
+  cohort = gets.strip.to_sym
   while !name.empty? do
     students << {name: name, cohort: cohort}
     if !students.count == 1
@@ -11,8 +11,8 @@ def input_students
     else
       puts "Now we have #{students.count} student"
     end
-    name = gets.chomp
-    cohort = gets.chomp.to_sym if !name.empty?
+    name = gets.strip
+    cohort = gets.strip.to_sym if !name.empty?
   end
 	students
 end
